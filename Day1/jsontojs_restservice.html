@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+        function fetch(){
+
+            let xhr=new XMLHttpRequest();
+
+            //initialize the request
+
+            xhr.open("get","https://jsonplaceholder.typicode.com/users",true);
+
+            xhr.send();
+
+            xhr.onreadystatechange=function(){
+
+                if(xhr.readyState==4){
+
+                    setTimeout(function(){
+
+                        let ele =document.getElementById('main');
+
+                        let data=xhr.responseText;
+
+                        let jsTypes=JSON.parse(data);//convert JSON to JS
+
+                        let htmlContent='';
+
+                        for(let i=0;i<jsType.length;i++){
+
+                            htmlContent=`<p>${htmlContent} Id=${jsTypes[i].id},
+
+                                Name=${jsTypes[i].name}</p>`
+
+                        }
+
+                        ele.innerHTML=htmlContent;
+
+                    },2000);
+
+                }
+
+            }
+
+            //updating the UI
+
+            let ele=document.getElementById('main');
+
+            ele.innerHTML='Please wait......'
+
+        }
+    
+
+        </script>
+
+
+  </body>
+</html>
