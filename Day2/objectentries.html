@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let items=[2,3,4,1,5];
+        document.write(`<p>Find 4 is present:${items.includes(4)}</p>`);
+        let emp={id:100,name:"Raj"};
+        let empValues=Object.values(emp);
+        document.write(`<p>empValues: ${empValues}</p>`);
+        let empEntries=Object.entries(emp);
+        document.write(`<p>empEnties:${empEntries}</p>`);
+
+        //to iterate the entries you must use for loop with array destructive syntax
+        for(let [k,v] of empEntries){
+            document.write(`<p>Property=${k},value=${v}</p>`)
+        }
+    </script>
+</body>
+</html>

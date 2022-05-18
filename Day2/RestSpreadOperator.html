@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Normal parameter</h3>
+    <script type="text/javascript">
+      function test(x, y) {
+        document.write(`<p>x=${x},y=${y}</p>`);
+      }
+      //call without argument
+      test();
+      //call with single argument
+      test(2);
+      //call with 2 argument
+      test(2, 3);
+      //call with 3 argument
+      test(2, 1, 3);
+      //array argument
+      test(arr);
+    </script>
+
+    <h3>Rest parameter(...) is used at the time of declaring</h3>
+
+    <script type="text/javascript">
+      function testrest(x, ...y) {
+        document.write(`<p>x=${x},y=${y}</p>`);
+      }
+
+      //call without argument
+      testrest();
+      //call with single argument
+      testrest(2);
+      //call with 2 argument
+      testrest(2, 3);
+      //call with 3 argument
+      testrest(2, 1, 3);
+      //array argument
+      testrest(arr);
+    </script>
+    <h3>Spread parameter(...) is used at the time of calling</h3>
+
+    <script type="text/javascript">
+      function test(x,y) {
+        document.write(`<p>x=${x},y=${y}</p>`);
+      }
+      function testspread(x, ...y) {
+        document.write(`<p>x=${x},y=${y}</p>`);
+      }
+
+      let arr = [8, 9, 10];
+
+      test(arr);
+      test(...arr);
+      testspread(...arr);
+    </script>
+    
+    <h3>Default parameter cannot be assigned with Spread parameter</h3>
+
+    <script type="text/javascript">
+      function test(x=0,y=0) {
+        document.write(`<p>x=${x},y=${y}</p>`);
+      }
+      function testspread(x, ...y) {
+        document.write(`<p>x=${x},y=${y}</p>`);
+      }
+
+      let array = [8, 9, 10];
+
+      test(array);
+      test(...array);
+      testspread(...array);
+    </script>
+
+</body>
+</html>
